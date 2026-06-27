@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypingMasterPro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold fs-3" href="#">
+                ⌨️ TypeMasterPro
+            </a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#typing-test">Typing Test</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+
+    <section class="hero-section">
+
+        <div class="container text-center">
+
+            <h1 class="display-3 fw-bold mb-3">
+                Become a Faster Typist
+            </h1>
+            
+            <h2 class="h4 mb-4">
+                Test your typing speed and accuracy with our free online typing test.
+            </h2><br>
+            <p class="lead mb-4">
+                Practice daily, improve your typing speed,
+                boost your accuracy and master keyboard skills.
+            </p>
+
+            <a href="#typing-test" class="btn btn-info btn-lg px-4">
+               Developed By Sunny Kumar Chaudhary ❤️
+            </a>
+
+        </div>
+
+    </section>
+    <section class="py-5">
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-md-3">
+                    <div class="stat-card text-center">
+                        <h2>10K+</h2>
+                        <p>Tests Completed</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="stat-card text-center">
+                        <h2>98%</h2>
+                        <p>User Satisfaction</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="stat-card text-center">
+                        <h2>120+</h2>
+                        <p>Highest WPM</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="stat-card text-center">
+                        <h2>24/7</h2>
+                        <p>Available</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- levels -->
+    <section id="levels" class="py-5">
+
+        <div class="container">
+
+            <h2 class="text-center mb-5">
+                Choose Your Level
+            </h2>
+
+            <div class="text-center mb-4 w-100">
+                <select id="timeSelect" class="form-select w-auto mx-auto">
+                    <option value="30">30 Seconds</option>
+                    <option value="60">1 Minute</option>
+                    <option value="120">2 Minutes</option>
+                    <option value="300">5 Minutes</option>
+                    <option value="600">10 Minutes</option>
+                </select>
+            </div>
+            <div class="row g-3" id="levelsContainer"></div>
+
+        </div>
+      
+    </section>
+    
+    <!-- test start -->
+    <section id="typing-test" class="py-5" style="display:none;">
+
+        <div class="container">
+
+            <div class="typing-card">
+
+                <h2 class="text-center mb-4">
+                    Typing Speed Test
+                </h2>
+
+                <div id="paragraph" class="paragraph-box">
+
+                    The quick brown fox jumps over the lazy dog.
+                    
+
+                </div>
+
+                <textarea id="inputBox" class="form-control mt-4" rows="5" placeholder="Start typing here...">
+            </textarea>
+
+                <div class="row mt-4 text-center">
+
+                    <div class="col-md-3">
+                        <div class="info-box">
+                            <h4 id="timer">60</h4>
+                            <p>Timer</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="info-box">
+                            <h4 id="wpm">0</h4>
+                            <p>WPM</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="info-box">
+                            <h4 id="accuracy">100%</h4>
+                            <p>Accuracy</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="info-box">
+                            <h4 id="mistakes">0</h4>
+                            <p>Mistakes</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="testControls" class="text-center mt-4">
+                <button id="restartBtn" class="btn btn-info btn-lg me-2">
+                    🔄 Restart Test
+                </button>
+                <button id="homeBtn" class="btn btn-secondary btn-lg">
+                    🏠 Back to Levels
+                </button>
+            </div>
+
+            <div id="resultBox" class="info-box mt-4" style="display:none;">
+                <h4>Test Results</h4>
+                <p id="resultSummary" class="mb-0"></p>
+                <button id="nextLevelBtn" class="btn btn-success mt-3 me-2" style="display:none;">
+                    Next Level
+                </button>
+                <button id="backToLevelsBtn" class="btn btn-secondary mt-3">
+                    Back to Levels
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+
+        const paragraph =
+            "The quick brown fox jumps over the lazy dog. Practice every day to improve your typing speed and accuracy.";
+
+        const paragraphBox = document.getElementById("paragraph");
+        const inputBox = document.getElementById("inputBox");
+        const timeSelect = document.getElementById("timeSelect");
+        const levelsContainer = document.getElementById("levelsContainer");
+
+        const timerEl = document.getElementById("timer");
+        const wpmEl = document.getElementById("wpm");
+        const accuracyEl = document.getElementById("accuracy");
+        const mistakesEl = document.getElementById("mistakes");
+        const resultBox = document.getElementById("resultBox");
+        const resultSummary = document.getElementById("resultSummary");
+        const nextLevelBtn = document.getElementById("nextLevelBtn");
+        const backToLevelsBtn = document.getElementById("backToLevelsBtn");
+        const homeBtn = document.getElementById("homeBtn");
+        const testControls = document.getElementById("testControls");
+
+        const maxLevels = 100;
+
+        let timeLeft = parseInt(timeSelect.value, 10) || 60;
+        let timerStarted = false;
+        let timer;
+        let currentLevel = 1;
+        let currentParagraph = 0;
+        let paragraphs = [paragraph];
+        let levelTypedChars = 0;
+        let levelTypedWords = 0;
+        let levelMistakes = 0;
+
+        paragraphBox.innerText = paragraph;
+
+        function getLevelLabel(level) {
+            const tiers = ["Easy", "Easy", "Easy", "Medium", "Medium", "Medium", "Hard", "Hard", "Expert", "Master"];
+            return tiers[Math.min(Math.floor((level - 1) / 5), tiers.length - 1)];
+        }
+
+        function getLevelTexts(level) {
+            if (level >= 50) {
+                const commonWords = [
+                    "common", "word", "typing", "practice", "speed",
+                    "test", "quick", "easy", "focus", "skill"
+                ];
+                const offset = (level - 50) % commonWords.length;
+                const lines = [];
+                for (let line = 0; line < 4; line++) {
+                    const count = 5 + Math.floor((level - 50) / 10);
+                    const text = [];
+                    for (let i = 0; i < count; i++) {
+                        text.push(commonWords[(offset + line + i) % commonWords.length]);
+                    }
+                    lines.push(text.join(" "));
+                }
+                return lines;
+            }
+
+            const words = [
+                "asdf", "jkl;", "dad", "fad", "sad", "lad", "ask", "flask", "desk", "task",
+                "type", "speed", "quick", "brown", "fox", "code", "test", "word", "fast", "flow"
+            ];
+            const sliceStart = (level - 1) % words.length;
+            const lines = [];
+            for (let line = 1; line <= 4; line++) {
+                const count = 4 + line + Math.floor(level / 10);
+                let text = [];
+                for (let i = 0; i < count; i++) {
+                    text.push(words[(sliceStart + i + level) % words.length]);
+                }
+                lines.push(text.join(" "));
+            }
+            return lines;
+        }
+
+        function renderLevelCards() {
+            levelsContainer.innerHTML = "";
+            for (let level = 1; level <= maxLevels; level++) {
+                const card = document.createElement("div");
+                card.className = "col-6 col-md-2";
+                card.innerHTML = `
+                    <div class="level-card" id="level-${level}" onclick="startLevel(${level})">
+                        <h3>${String(level).padStart(2, '0')}</h3>
+                        <p>${getLevelLabel(level)}</p>
+                        <div class="stars"></div>
+                        <div class="level-status">START</div>
+                    </div>
+                `;
+                levelsContainer.appendChild(card);
+            }
+        }
+
+        renderLevelCards();
+        timerEl.innerText = formatTime(timeLeft);
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function resetStats() {
+            wpmEl.innerText = 0;
+            accuracyEl.innerText = "100%";
+            mistakesEl.innerText = 0;
+            levelTypedChars = 0;
+            levelTypedWords = 0;
+            levelMistakes = 0;
+            resultBox.style.display = "none";
+            nextLevelBtn.style.display = "none";
+            backToLevelsBtn.style.display = "none";
+            testControls.style.display = "block";
+            document.querySelector(".typing-card").style.display = "block";
+        }
+
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;");
+        }
+
+        function getCurrentLineText() {
+            return paragraphs[currentParagraph] || "";
+        }
+
+        function normalizeText(text) {
+            return text.replace(/\s+/g, " ").trim();
+        }
+
+        function normalizeTypedForLine(typed, expected) {
+            const normalizedTyped = normalizeText(typed.replace(/\n/g, " "));
+            const normalizedExpected = normalizeText(expected);
+            return normalizedTyped === normalizedExpected ? normalizedTyped : typed.replace(/\n/g, " ");
+        }
+
+        function countLineMistakes(typed, expected) {
+            const normalized = normalizeText(typed.replace(/\n/g, " "));
+            const expectedText = normalizeText(expected);
+            let mistakes = 0;
+            const maxLen = Math.max(normalized.length, expectedText.length);
+            for (let i = 0; i < maxLen; i++) {
+                const typedChar = normalized[i] || "";
+                const expectedChar = expectedText[i] || "";
+                if (typedChar !== expectedChar) {
+                    mistakes++;
+                }
+            }
+            return mistakes;
+        }
+
+        function renderCurrentLine() {
+            const line = getCurrentLineText();
+            const typed = inputBox.value.replace(/\n/g, " ");
+            const words = line.split(" ");
+            const typedWords = typed.trim().split(/\s+/).filter(Boolean);
+            const hasTrailingSpace = typed.endsWith(" ");
+            let html = "";
+
+            const rawIndex = typedWords.length === 0
+                ? 0
+                : hasTrailingSpace
+                    ? typedWords.length
+                    : typedWords.length - 1;
+            const currentIndex = Math.min(rawIndex, words.length - 1);
+            const currentTyped = typedWords[currentIndex] || "";
+
+            words.forEach((word, index) => {
+                let classes = ["word-span"];
+                let content = escapeHtml(word);
+
+                if (index < currentIndex) {
+                    const completedWord = typedWords[index] || "";
+                    if (completedWord === word) {
+                        classes.push("correct");
+                    } else {
+                        classes.push("incorrect");
+                    }
+                } else if (index === currentIndex) {
+                    classes.push("current-word");
+                    const match = word.slice(0, currentTyped.length);
+                    const typedCorrect = currentTyped === match;
+                    if (!typedCorrect && currentTyped.length > 0) {
+                        classes.push("incorrect");
+                    }
+                    const correctPart = escapeHtml(word.slice(0, currentTyped.length));
+                    const remainingPart = escapeHtml(word.slice(currentTyped.length));
+                    content = `<span class="typed-part">${correctPart}</span><span class="cursor"></span><span class="remaining-part">${remainingPart}</span>`;
+                }
+
+                html += `<span class="${classes.join(" ")}">${content}</span>`;
+                if (index < words.length - 1) {
+                    html += " ";
+                }
+            });
+
+            paragraphBox.innerHTML = html;
+        }
+
+        function calculateStats() {
+            const rawTyped = inputBox.value.replace(/\n/g, " ");
+            const typed = normalizeText(rawTyped);
+            const typedChars = rawTyped.length;
+            const typedWords = typed.split(/\s+/).filter(Boolean).length;
+
+            const elapsedSeconds = parseInt(timeSelect.value, 10) - timeLeft;
+            const elapsedMinutes = elapsedSeconds > 0 ? elapsedSeconds / 60 : 0;
+            const totalWords = levelTypedWords + typedWords;
+            const wpm = elapsedMinutes > 0 ? Math.round(totalWords / elapsedMinutes) : 0;
+            wpmEl.innerText = wpm;
+
+            const mistakes = countLineMistakes(rawTyped, getCurrentLineText());
+            mistakesEl.innerText = levelMistakes + mistakes;
+
+            let totalChars = levelTypedChars + typedChars;
+            let totalMistakes = levelMistakes + mistakes;
+            let accuracy = 100;
+            if (totalChars > 0) {
+                accuracy = ((totalChars - totalMistakes) / totalChars) * 100;
+            }
+            accuracyEl.innerText = accuracy.toFixed(1) + "%";
+        }
+
+        function startTimer() {
+            clearInterval(timer);
+            timer = setInterval(() => {
+                timeLeft--;
+                timerEl.innerText = formatTime(timeLeft);
+
+                if (timeLeft <= 0) {
+                    stopTest();
+                    calculateStats();
+                    showResults();
+                }
+            }, 1000);
+        }
+
+        function stopTest() {
+            clearInterval(timer);
+            timerStarted = false;
+            inputBox.disabled = true;
+        }
+
+        inputBox.addEventListener("input", () => {
+            const rawTyped = inputBox.value.replace(/\n/g, " ");
+            const typed = normalizeText(rawTyped);
+            const currentLine = normalizeText(getCurrentLineText());
+
+            if (!timerStarted && typed.length > 0) {
+                startTimer();
+                timerStarted = true;
+            }
+
+            calculateStats();
+            renderCurrentLine();
+
+            if (typed === currentLine && typed.length > 0) {
+                const currentMistakes = countLineMistakes(rawTyped, currentLine);
+                const currentWords = typed.split(/\s+/).filter(Boolean).length;
+
+                levelTypedChars += rawTyped.length;
+                levelTypedWords += currentWords;
+                levelMistakes += currentMistakes;
+
+                if (currentParagraph + 1 < paragraphs.length) {
+                    currentParagraph++;
+                    inputBox.value = "";
+                    renderCurrentLine();
+                    calculateStats();
+                    inputBox.focus();
+                } else {
+                    stopTest();
+                    calculateStats();
+                    showResults();
+                }
+            }
+        });
+
+        document.getElementById("restartBtn").addEventListener("click", () => {
+            if (currentLevel) {
+                startLevel(currentLevel);
+            } else {
+                location.reload();
+            }
+        });
+
+        nextLevelBtn.addEventListener("click", () => {
+            if (currentLevel < maxLevels) {
+                startLevel(currentLevel + 1);
+            }
+        });
+
+        backToLevelsBtn.addEventListener("click", () => {
+            stopTest();
+            document.getElementById("typing-test").style.display = "none";
+            document.getElementById("levels").style.display = "block";
+            resultBox.style.display = "none";
+        });
+
+        homeBtn.addEventListener("click", () => {
+            stopTest();
+            document.getElementById("typing-test").style.display = "none";
+            document.getElementById("levels").style.display = "block";
+            resultBox.style.display = "none";
+        });
+
+        const levelTexts = {
+            1: [
+                "asdf jkl;",
+                "asdf jkl; asdf jkl;",
+                "asdf jkl; asdf jkl; asdf jkl;",
+                "asdf jkl; asdf jkl; asdf jkl; asdf jkl;"
+    ],
+    2: [
+        "fads jall",
+        "flak lads sad; dask",
+        "sals flash gash half glad",
+        "dash jaf; asks gads glass asdfg hjkl;"
+    ],
+    3: [
+        "alfa dash",
+        "slag fall gash jall",
+        "adds dask shad fads jalk",
+        "lash glad flak asks flask gals half dahl"
+    ],
+    4: [
+        "laks fad;",
+        "lash slad gash flash",
+        "glass shall salad flasks alfalfa",
+        "salad flash glass shall salad flasks alfalfa salad"
+    ],
+    5: [
+        "a s d f",
+        "j k l ; a s",
+        "d f j k l ; ffaa ssdd",
+        "ddkk ll;; ggjj hh;; asdf jkl; asdfg hjkl;"
+    ],
+    6: [
+        "has gas",
+        "dad fad lad sad",
+        "ask glass fall all shallow gash",
+        "dahl kal; flask shall glad gald dash jask"
+    ],
+    7: [
+        "saff jall",
+        "fads dask slag alfalfa",
+        "salad flask glass hall gash half",
+        "dash lads sad; dask sals flash gash half"
+    ],
+    8: [
+        "dash jaf;",
+        "asks gads glass alfa",
+        "dash slag fall gash jall adds",
+        "dask shad fads jalk lash glad flak asks"
+    ],
+    9: [
+        "gals half",
+        "dahl laks fad; lash",
+        "slad gash flash glass shall salad",
+        "flasks alfalfa salad hall gash half glad dash jaf;"
+    ],
+    10: [
+        "asdfg hjkl;",
+        "lkjhg fdsa asdfg hjkl;",
+        "lkjhg fdsa asdfg ffaa ssdd ddkk",
+        "ll;; ggjj hh;; a s d f j k l ;"
+    ],
+    11: [
+        "qwer uiop",
+        "qwer uiop qwer uiop",
+        "quiet write route power outer paper",
+        "prior type upper tower tight puppy retry equity"
+    ],
+    12: [
+        "pour wire",
+        "true root pity pure",
+        "poet port tree trip tour rope",
+        "proper polite report quite wrote party title error"
+    ],
+    13: [
+        "your white",
+        "world yield write quote",
+        "proper equip properly outer power layout",
+        "update tired row tow row toe row top row"
+    ],
+    14: [
+        "put out",
+        "put out put out",
+        "try to try to try to",
+        "try to try you are you are you"
+    ],
+    15: [
+        "wire peer",
+        "tire root pre; type",
+        "writer wire power paper priority property",
+        "properly proper piece proud quiet quiet route outer"
+    ],
+    16: [
+        "query queue",
+        "quick quiet pity poet",
+        "port pour power proxy pull fully",
+        "we write words daily to practice typing fast"
+    ],
+    17: [
+        "our team",
+        "will update the power",
+        "layout today your report is quite",
+        "correct and properly written please pure water into"
+    ],
+    18: [
+        "top row",
+        "layout has letters qwer",
+        "and uiop try to type every",
+        "word without any error young people are working"
+    ],
+    19: [
+        "worry less",
+        "and practice more to",
+        "build speed quite route power outer",
+        "paper prior poetry power type upper tower tight"
+    ],
+    20: [
+        "your white",
+        "world yield write quote",
+        "proper true equip properly outer power",
+        "layout update tired now quiet write route power"
+    ],
+
+    21: [
+        "zxcv m,./",
+        "zxcv m,./ zxcv m,./",
+        "zinc voice micro bonus civic cover",
+        "comic move zone mixer zebra maximum convex curve"
+    ],
+    22: [
+        "bunch curve",
+        "mixed mimic ozone cover",
+        "boxy zxcvb nm,./ zxcvb nm,./",
+        "zxcvb nm,./ zxcvb can man van ban"
+    ],
+    23: [
+        "ran tan",
+        "pan map map new",
+        "now net not nut net new",
+        "now net box vox cox fox box vox"
+    ],
+    24: [
+        "zinc voice",
+        "micro bonus civic cover",
+        "comic move zone mixer zebra maximum",
+        "convex curve bunch curve mixed mimic ozone cover"
+    ],
+    25: [
+        "come back",
+        "home now because we",
+        "need you never make a mistake",
+        "while typing this sentence can you move that"
+    ],
+    26: [
+        "zinc is",
+        "a metal and ozone",
+        "is a gas maximum speed can",
+        "be achieved with pure focus voice control is"
+    ],
+    27: [
+        "very cool",
+        "modern feature comic books",
+        "are very funny and interesting too",
+        "zebra is an animal with black and white"
+    ],
+    28: [
+        "zxcv m,./",
+        "zinc voice micro bonus civic",
+        "cover comic move zone mixer zebra",
+        "maximum convex curve bunch curve mixed mimic ozone"
+    ],
+    29: [
+        "can man",
+        "van ban ran tan pan",
+        "map map new now net not",
+        "nut net new now net box vox cox"
+    ],
+    30: [
+        "fox box",
+        "vox cox fox box come",
+        "back home now because we need",
+        "you never make a mistake while typing this"
+    ],
+
+    31: [
+        "the quick",
+        "brown fox jumps over",
+        "lazy dog pack my box with",
+        "five dozen liquor jugs crazy fredrick bought many"
+    ],
+    32: [
+        "very big",
+        "lamps six big devils from",
+        "japan quickly forgot how to dance",
+        "jackie will prove that my big quiz is"
+    ],
+    33: [
+        "heavy boxes",
+        "contain five dozen jugs of",
+        "pink wine the five boxing wizards",
+        "jump quickly and very high we promptly judged"
+    ],
+    34: [
+        "antique ivory",
+        "buckles for the next prize",
+        "the quick brown fox jumps over",
+        "lazy dog pack my box with five dozen"
+    ],
+    35: [
+        "typing every",
+        "single letter builds incredible",
+        "muscle memory you must practice daily",
+        "to achieve high speed goals focus entirely on"
+    ],
+    36: [
+        "accuracy before",
+        "you try to rush every",
+        "expert was once a beginner who",
+        "never quit quick movement of fingers is necessary"
+    ],
+    37: [
+        "keep your",
+        "wrists up and straight for",
+        "comfort always do not look at",
+        "the keyboard while practicing here your brain will"
+    ],
+    38: [
+        "automatically remember",
+        "all key placements the quick",
+        "brown fox jumps over lazy dog pack",
+        "my box with five dozen liquor jugs typing"
+    ],
+    39: [
+        "crazy fredrick",
+        "bought many very big lamps",
+        "six big devils from japan quickly",
+        "forgot how to dance focus entirely on accuracy"
+    ],
+    40: [
+        "jackie will",
+        "prove that my big quiz",
+        "is completely wrong heavy boxes contain",
+        "five dozen jugs of pink wine quick movement"
+    ],
+
+    41: [
+        "The Quick",
+        "Brown Fox Jumps Over",
+        "Lazy Dog Rahul and Aman are",
+        "working on a new Project New Delhi is"
+    ],
+    42: [
+        "12345 67890",
+        "12345 67890 12345 67890",
+        "98765 43210 98765 43210 98765 43210",
+        "10 20 30 40 50 60 70 80 90 100"
+    ],
+    43: [
+        "The total",
+        "budget for this project is",
+        "5000 dollars We have received 12",
+        "laptops and 45 new chairs The meeting"
+    ],
+    44: [
+        "User login",
+        "successful at 12:45 PM from",
+        "IP 192.168.1.1 There are 24 hours",
+        "in a day and 60 minutes in an"
+    ],
+    45: [
+        "The price",
+        "of this product increased by",
+        "15 percent recently Please call us",
+        "on +91 98765 43210 for help John"
+    ],
+    46: [
+        "Error code",
+        "#404 at line number 982",
+        "Please login with User_ID admin@2026 for",
+        "system access Total budget is $5,432 with"
+    ],
+    47: [
+        "Coding in",
+        "JavaScript and Python is very",
+        "exciting process The Quick Brown Fox",
+        "Jumps Over Lazy Dog always Rahul and"
+    ],
+    48: [
+        "New Delhi",
+        "is the beautiful capital city",
+        "of India today 12345 67890",
+        "12345 67890 test 98765 43210 done"
+    ],
+    49: [
+        "We have",
+        "received 12 laptops and 45",
+        "new chairs here India won the cricket",
+        "match by 7 wickets today match User"
+    ],
+    50: [
+        "Please call",
+        "us on +91 98765 43210",
+        "for emergency help John Doe born on",
+        "15th August 1947 has fixed all errors"
+    ],
+    51: [
+        "the quick",
+        "brown fox jumps over",
+        "a lazy dog very quickly",
+        "pack my box with five dozen liquor jugs"
+    ],
+    52: [
+        "crazy fredrick",
+        "bought many very big lamps",
+        "six big devils from japan quickly",
+        "forgot how to dance on the stage today"
+    ],
+    53: [
+        "the five boxing",
+        "wizards jump quickly and high",
+        "jackie will prove that my big",
+        "quiz is completely wrong and very bad"
+    ],
+    54: [
+        "heavy boxes",
+        "contain five dozen jugs of",
+        "pink wine while the five boxing",
+        "wizards jump quickly over the lazy dog"
+    ],
+    55: [
+        "we promptly",
+        "judged antique ivory buckles for",
+        "the next prize which was quite",
+        "amazing for the young smart boy here"
+    ],
+    56: [
+        "all alphabets",
+        "from a to z are included",
+        "in this quick brown fox jumps",
+        "over the lazy dog to practice typing"
+    ],
+    57: [
+        "pack my box",
+        "with five dozen liquor jugs",
+        "crazy fredrick bought many very big",
+        "lamps for the upcoming party next week"
+    ],
+    58: [
+        "six big devils",
+        "from japan quickly forgot how",
+        "to dance on the modern floor",
+        "jackie will prove that my quiz is wrong"
+    ],
+    59: [
+        "heavy boxes",
+        "contain five dozen jugs of",
+        "pink wine the five boxing wizards",
+        "jump quickly and very high right now"
+    ],
+    60: [
+        "we promptly",
+        "judged antique ivory buckles for",
+        "the next prize which was quite",
+        "amazing for the young smart boys today"
+    ],
+
+    61: [
+        "a quick movement",
+        "of the enemy will jeopardize",
+        "six large power vessels quite fast",
+        "brave boys always find good zinc mixer"
+    ],
+    62: [
+        "jovial expat",
+        "kings wisely quiz each crazy",
+        "form of bold new dynamic software",
+        "the dynamic wizard provided high quality juice"
+    ],
+    63: [
+        "gazing back",
+        "at the modern building layout",
+        "we noticed five very unique onyx",
+        "jewelry pieces fixed with top quality craftsmanship"
+    ],
+    64: [
+        "jack fixed",
+        "the big leaky water valve",
+        "with a proper heavy bronze monkey",
+        "wrench which was quite old and rusty"
+    ],
+    65: [
+        "the big prize",
+        "was quickly won by the",
+        "clever boy who solved every complex",
+        "puzzle from the modern database management book"
+    ],
+    66: [
+        "pack my box",
+        "with five dozen liquor jugs",
+        "the quick brown fox jumps over",
+        "the lazy dog to complete typing task"
+    ],
+    67: [
+        "crazy fredrick",
+        "bought many very big lamps",
+        "six big devils from japan quickly",
+        "forgot how to dance on the floor"
+    ],
+    68: [
+        "the five boxing",
+        "wizards jump quickly and high",
+        "jackie will prove that my big",
+        "quiz is completely wrong and very bad"
+    ],
+    69: [
+        "heavy boxes",
+        "contain five dozen jugs of",
+        "pink wine while the five boxing",
+        "wizards jump quickly over the lazy dog"
+    ],
+    70: [
+        "we promptly",
+        "judged antique ivory buckles for",
+        "the next prize which was quite",
+        "amazing for the young smart boy here"
+    ],
+    71: [
+        "Astronomers discovered an enigmatic, glowing exoplanet swirling beyond the Milky Way galaxy.",
+        "The ancient pharaoh's labyrinth contained mysterious hieroglyphics carved deeply into quartz pillars.",
+        "Quantum computing algorithms can process complex, multi-dimensional encryption keys in milliseconds.",
+        "A hyperactive chimpanzee quickly snatched the golden, diamond-crusted watch from a tourist."
+    ],
+    72: [
+        "Cybersecurity experts successfully neutralized a highly sophisticated, multi-vector ransomware attack yesterday.",
+        "Deep-sea oceanographers explored a hazardous underwater trench teeming with bizarre, bioluminescent creatures.",
+        "The eccentric billionaire unexpectedly announced a massive, multi-billion-dollar expedition to Mars.",
+        "Meticulous psychological profiling reveals fascinating insights into human decision-making under high stress."
+    ],
+    73: [
+        "Volcanic eruptions generated colossal plumes of toxic ash that blanketed the entire metropolitan area.",
+        "Medieval knights defended the fortified stone fortress using heavy, customized iron trebuchets.",
+        "Artificial intelligence networks are rapidly generating hyper-realistic, high-resolution digital artwork.",
+        "A fearless acrobat executed a death-defying, double-backflip maneuver high above the crowded stadium."
+    ],
+    74: [
+        "Biomedical engineers developed an innovative, microscopic nanotechnology capsule to destroy cancer cells.",
+        "The prestigious international orchestra delivered a breathtaking, world-class symphony performance last night.",
+        "Subterranean cave explorers uncovered prehistoric, frozen artifacts dating back to the last Ice Age.",
+        "A chaotic traffic jam completely gridlocked thirty-five blocks of downtown Manhattan during peak hours."
+    ],
+    75: [
+        "Renowned archaeologists excavated a long-lost, magnificent golden temple hidden deep inside Cambodian jungles.",
+        "Advanced macroeconomic forecasting models predict unprecedented financial growth for emerging global markets.",
+        "An anonymous hacker leaked highly confidential, top-secret government documents regarding climate research.",
+        "Wild Siberian tigers gracefully navigated across the treacherous, snow-covered mountain ridges."
+    ],
+    76: [
+        "Organic chemistry professors conducted a groundbreaking experiment on synthetic molecular stabilization bonds.",
+        "The competitive, high-altitude drone race required extreme precision maneuvers through narrow canyons.",
+        "Investigative journalists exposed a massive, corrupt corporate scandal involving international money laundering.",
+        "A majestic, century-old humpback whale breached spectacularly near the crowded tourist cruise ship."
+    ],
+    77: [
+        "Legendary samurai warriors practiced disciplined swordsmanship techniques under blooming cherry blossom trees.",
+        "Next-generation aerospace engineers successfully launched a reusable, liquid-fueled rocket propulsion prototype.",
+        "Fascinating anthropological studies explore how isolated Amazonian tribes utilize rare medicinal plants.",
+        "A sudden, violent thunderstorm shattered several fragile glass windows of the historic skyscraper."
+    ],
+    78: [
+        "Talented graphic designers curated a stunning, highly interactive virtual reality art exhibition.",
+        "The complex, multi-layered criminal investigation spanned across seven different European law agencies.",
+        "Rare astronomical alignments will create a spectacular, once-in-a-century total solar eclipse tomorrow.",
+        "Determined extreme mountaineers successfully summited the hazardous, ice-encrusted peak without supplementary oxygen."
+    ],
+    79: [
+        "Revolutionary gene-editing technologies like CRISPR could potentially eradicate hereditary diseases forever.",
+        "The elite secret service squad neutralized a dangerous, high-profile hostage situation flawlessly.",
+        "Centuries-old pirate shipwrecks at the ocean floor hold immense treasures of gold bullion.",
+        "A highly infectious, enthusiastic laughter echoed throughout the crowded comedy club pavilion."
+    ],
+    80: [
+        "Mastering complex data visualizations empowers business executives to make data-driven decisions rapidly.",
+        "The world's largest geothermal power plant generates clean, sustainable electricity for millions.",
+        "A mysterious, unidentified flying object hovered silently over the desolate Nevada desert landscape.",
+        "Brilliant structural architects designed an earthquake-resistant, eco-friendly luxury residential tower."
+    ],
+
+    81: [
+        "const dbClient = await MongoClient.connect(process.env.MONGO_URI, { poolSize: 50 });",
+        "let payloadData = Buffer.from(request.body.cipherText, 'base64').toString('ascii');",
+        "if (payloadData.includes('ACCESS_GRANTED')) { initiateSystemBoot(); } else { abort(403); }",
+        "export const cryptoKey = await crypto.subtle.generateKey({ name: \"AES-GCM\", length: 256 });"
+    ],
+    82: [
+        "import { configureStore } from '@reduxjs/toolkit'; import rootReducer from './slices';",
+        "const globalStore = configureStore({ reducer: rootReducer, devTools: process.env.NODE_ENV !== 'production' });",
+        "globalStore.subscribe(() => console.info(`[State Update]: ${globalStore.getState().auth.userId}`));",
+        "document.querySelectorAll('.terminal-row-input').forEach(element => element.classList.add('active'));"
+    ],
+    83: [
+        "class BlockchainNode extends NetworkProtocol { constructor(ip, port) { super(ip); this.ledger = []; } }",
+        "const localNode = new BlockchainNode('192.168.43.10', 8080); Object.preventExtensions(localNode);",
+        "try { await localNode.synchronizeBlocks(); } catch (syncError) { logger.error(`Sync failed: ${syncError.stack}`); }",
+        "let dynamicToken = jwt.sign({ role: 'Super_Admin' }, process.env.JWT_SECRET, { expiresIn: '1h' });"
+    ],
+    84: [
+        "{\"docker-compose\": {\"version\": \"3.8\", \"services\": {\"web_server\": {\"image\": \"nginx:alpine\"}}}}",
+        "{\"environment\": [\"NODE_ENV=production\", \"PORT=5000\"], \"ports\": [\"80:80\", \"443:443\"], \"restart\": \"always\"}",
+        "API Endpoint test: curl -X POST -H \"Authorization: Bearer XyZ79#\" https://dev.net",
+        "Terminal command: sudo systemctl restart systemd-networkd.service && tail -f /var/log/syslog"
+    ],
+    85: [
+        "const checkLeapYear = (year) => (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);",
+        "let luckyNumbers = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100) + 1);",
+        "console.log(`Execution Time: ${(performance.now() - startTime).toFixed(4)} milliseconds.`);",
+        "for (let userItem of activeSessionMap.values()) { sendRealtimeNotification(userItem.socketId); }"
+    ],
+    86: [
+        "{\"payment_gateway\": {\"provider\": \"Stripe\", \"currency\": \"INR\", \"amount_cents\": 450000},",
+        "\"customer\": {\"email\": \"rahul_dev@github.io\", \"phone\": \"+91-9988776655\", \"verified\": true},",
+        "\"meta\": {\"coupon_code\": \"TYPING_MASTER_50\", \"discount_percentage\": 15.50, \"tax_id\": \"GSTIN9821\"},",
+        "\"status_history\": [{\"timestamp\": 1719123456, \"event\": \"charge.succeeded\", \"source\": \"webhook\"}]}"
+    ],
+    87: [
+        "if (passwordString.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{12,}$/)) {",
+        "  globalValidationStatus = true; updateSecurityIndicatorStrength('EXCELLENT_SECURE_HASH');",
+        "} else { throw new Error(\"Security Exception: Password parameter violates corporate policy requirements!\"); }",
+        "const encryptedPayload = cryptoModule.publicEncrypt(publicKeyCertificate, Buffer.from(plainTextData));"
+    ],
+    88: [
+        "import pandas as pd; import numpy as np; dataset = pd.read_csv('/data/global_analytics.csv');",
+        "cleaned_matrix = dataset.dropna(subset=['revenue_usd']).replace([np.inf, -np.inf], np.nan);",
+        "correlation_coefficient = cleaned_matrix['marketing_spend'].corr(cleaned_matrix['total_conversions']);",
+        "print(f\"[Data Insights]: Calculated Pearson Correlation R-value equals: {correlation_coefficient:.4f}\");"
+    ],
+    89: [
+        "const expressApp = require('express')(); const httpProtocol = require('http').createServer(expressApp);",
+        "const websocketServer = require('socket.io')(httpProtocol, { cors: { origin: \"*\", methods: [\"GET\"] } });",
+        "websocketServer.on('connection', (clientSocket) => { clientSocket.join(`room_${clientSocket.handshake.query.id}`); });",
+        "httpProtocol.listen(process.env.PORT || 3000, () => { console.log('Cluster thread spawned successfully.'); });"
+    ],
+    90: [
+        "git remote add origin https://github.com",
+        "git checkout -b feature/advanced-wpm-accuracy-calculation-engine-v3 --track origin/main",
+        "npm install --save-dev typescript @types/node @typescript-eslint/eslint-plugin eslint prettier",
+        "npx tsc --init --target es2022 --module commonjs --skipLibCheck true --forceConsistentCasingInFileNames"
+    ],
+
+    91: [
+        "The philosophical concept of existentialism emphasizes individual freedom, absolute choice, and personal responsibility.",
+        "Socrates famously claimed that an unexamined life is fundamentally not worth living for any human being.",
+        "Contemplating the vastness of our infinite cosmic universe often triggers profound waves of deep introspection.",
+        "Human consciousness remains one of the most baffling, unsolved scientific mysteries in contemporary neurological research."
+    ],
+    92: [
+        "Macroeconomic stability requires a delicate, perfectly balanced equilibrium between fiscal policies and market dynamics.",
+        "Unchecked hyperinflation can rapidly collapse a nation's financial framework, destroying civilian purchasing power completely.",
+        "Central banking committees closely monitor fluctuating interest rates to prevent catastrophic global economic recessions.",
+        "Strategic diversification of investment portfolios effectively mitigates potential risks during volatile market liquidations."
+    ],
+    93: [
+        "The magnificent, snow-capped Himalayan peaks attract thousands of courageous, elite mountaineers every single season.",
+        "Navigating treacherous glacial crevasses demands flawless coordination, immense physical stamina, and high-quality safety gear.",
+        "Standing atop Mount Everest offers an awe-inspiring, panoramic view of our planet's curved atmospheric horizon.",
+        "Tragically, unpredictable avalanches frequently threaten the lives of even the most experienced high-altitude explorers."
+    ],
+    94: [
+        "Marine biologists discovered an extraordinarily resilient ecosystem thriving near scorching hydrothermal vents deep inside oceans.",
+        "Superheated mineral water spewing from the Earth's crust fuels a unique, non-photosynthetic chemosynthetic food chain.",
+        "Bizarre giant tube worms and prehistoric blind crabs populate these dark, high-pressure abyssal environments completely.",
+        "Studying these extreme lifeforms provides invaluable clues about potential extraterrestrial organisms on icy Jovian moons."
+    ],
+    95: [
+        "The Renaissance period sparked a phenomenal cultural explosion of revolutionary artistic techniques across European nations.",
+        "Leonardo da Vinci's masterful notebooks seamlessly blended advanced mechanical engineering concepts with sublime oil paintings.",
+        "Michelangelo painstakingly sculpted stunning, hyper-realistic human anatomy structures from cold blocks of Carrara marble.",
+        "This pivotal historical era permanently shifted human civilization away from medieval dogmas toward scientific humanism."
+    ],
+    96: [
+        "Quantum mechanics describes a counter-intuitive subatomic realm where particles can exist in multiple places simultaneously.",
+        "The famous Schrodinger's cat thought experiment illustrates the bizarre paradoxes of quantum state superposition theories.",
+        "Entangled photons can instantly communicate state changes across vast distances, defying classical Newtonian physics rules.",
+        "Developing stable, fault-tolerant quantum computers will completely revolutionize modern data cryptography systems worldwide."
+    ],
+    97: [
+        "Sustainable urban architecture focuses on building energy-efficient skyscrapers integrated with massive vertical community gardens.",
+        "Advanced solar panels and micro wind turbines harvest renewable energy to power automated water recycling networks.",
+        "Utilizing cross-laminated timber instead of heavy carbon-intensive concrete drastically reduces structural greenhouse gas emissions.",
+        "These futuristic green metropolises aim to achieve total carbon neutrality while enhancing human psychological well-being."
+    ],
+    98: [
+        "A compelling, well-crafted fictional novel transports avid readers into intricately detailed, highly immersive imaginary realms.",
+        "Developing complex, multi-dimensional characters requires subtle psychological realism blended with dramatic storytelling arcs.",
+        "The profound emotional catharsis experienced at a masterpiece story's climax leaves an indelible mark on readers.",
+        "Literature serves as a timeless cultural bridge, connecting human experiences across different historical generations seamlessly."
+    ],
+    99: [
+        "The complex biochemical process of photosynthesis transforms solar radiation into vital, life-sustaining chemical energy.",
+        "Chlorophyll molecules within plant cells capture specific wavelengths of light to split water atoms efficiently.",
+        "This intricate reactions sequence releases pure oxygen into our atmosphere while synthesizing essential glucose nutrients.",
+        "Without this foundational biological phenomenon, complex multicellular terrestrial life on Earth could never have evolved."
+    ],
+    100: [
+        "Congratulations on successfully triumphing over this absolute masterpiece of advanced computational touch typing challenges!",
+        "You have definitively cultivated incredible finger dexterity, flawless kinetic muscle memory, and unparalleled typing accuracy limits.",
+        "Your unwavering discipline throughout these hundred unique, high-vocabulary lessons separates you from ordinary computer operators.",
+        "Maintain this supreme level of professional elite performance by continuously executing clean, rhythmic keystrokes forever!"
+    ]
+
+        };
+
+        function startLevel(level) {
+            currentLevel = level;
+            paragraphs = levelTexts[level] || getLevelTexts(level);
+            currentParagraph = 0;
+
+            timeLeft = parseInt(timeSelect.value, 10) || 60;
+            timerEl.innerText = formatTime(timeLeft);
+            resetStats();
+            clearInterval(timer);
+            inputBox.value = "";
+            inputBox.disabled = false;
+            renderCurrentLine();
+
+            document.getElementById("levels").style.display = "none";
+            document.getElementById("typing-test").style.display = "block";
+            resultBox.style.display = "none";
+            testControls.style.display = "block";
+            document.querySelector(".typing-card").style.display = "block";
+            inputBox.focus();
+        }
+
+        function showResults() {
+            const finalAccuracy = parseFloat(accuracyEl.innerText) || 0;
+            const finalWpm = wpmEl.innerText || 0;
+            const finalMistakes = mistakesEl.innerText || 0;
+
+            resultSummary.innerHTML =
+                "<div class=\"result-summary\">" +
+                "<p><strong>WPM:</strong> " + finalWpm + "</p>" +
+                "<p><strong>Accuracy:</strong> " + finalAccuracy.toFixed(1) + "%</p>" +
+                "<p><strong>Mistakes:</strong> " + finalMistakes + "</p>" +
+                "</div>";
+
+            document.getElementById("typing-test").style.display = "none";
+            testControls.style.display = "none";
+            resultBox.style.display = "block";
+            nextLevelBtn.style.display = currentLevel < maxLevels ? "inline-block" : "none";
+            backToLevelsBtn.style.display = "inline-block";
+            updateLevelCard(currentLevel, finalAccuracy);
+        }
+
+        function updateLevelCard(level, accuracy) {
+            const card = document.getElementById("level-" + level);
+            if (!card) return;
+
+            const stars = card.querySelector(".stars");
+            const status = card.querySelector(".level-status");
+
+            if (accuracy >= 80) {
+                stars.innerHTML = "⭐⭐⭐";
+                status.innerHTML = "COMPLETED";
+                card.classList.add("completed");
+            } else if (accuracy >= 60) {
+                stars.innerHTML = "⭐⭐";
+                status.innerHTML = "COMPLETED";
+                card.classList.add("completed");
+            } else if (accuracy >= 40) {
+                stars.innerHTML = "⭐";
+                status.innerHTML = "COMPLETED";
+                card.classList.add("completed");
+            } else {
+                stars.innerHTML = "";
+                status.innerHTML = "FAILED";
+                card.classList.add("failed");
+            }
+        }
+
+    </script>
+<!-- footer -->
+    <section class="premium-footer py-5">
+        <div class="container">
+            <div class="premium-card rounded-4 p-5">
+                <div class="row align-items-center gy-4">
+                    <div class="col-md-8">
+                        <span class="premium-label">Premium</span>
+                        <h3>Upgrade to Premium Typing Master</h3>
+                        <p class="premium-description">
+                            Unlock exclusive lessons, advanced analytics, and personalized speed challenges.
+                            Enjoy a premium dashboard, better progress tracking, and monthly power drills.
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <a href="#" class="btn btn-success btn-lg me-2">Go Premium</a>
+                        <a href="#contact" class="btn btn-secondary btn-lg">Contact Sales</a>
+                    </div>
+                </div>
+                <div class="row premium-features text-center mt-4 gx-4">
+                    <div class="col-md-4">
+                        <h5>50+ Level Packs</h5>
+                        <p>Advanced lessons for every skill level.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Deep Analytics</h5>
+                        <p>Track speed, accuracy, and progression.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Weekly Challenges</h5>
+                        <p>Stay motivated with fresh typing drills.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<footer class="custom-footer py-5 px-3">
+   
+
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Brand -->
+            <div class="col-md-4 mb-4">
+                <h3> ⌨️ TypeMasterPro</h3>
+                <h4>Test your typing speed and accuracy with our free online typing test.</h4>
+                <p>
+                    Practice daily, improve your typing speed,
+                boost your accuracy and master keyboard skills.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-4 mb-4">
+                <h4>Quick Links</h4>
+
+                <ul class="footer-links">
+                    <li><a href="#">🏠 Home</a></li>
+                    <li><a href="#tools">🛠 Tools</a></li>
+                    <li><a href="#">📜 Privacy Policy</a></li>
+                    <li><a href="#">📄 Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-md-4 mb-4">
+                <h4>Contact Us</h4>
+
+                <p>📧 Email: yourmail@gmail.com</p>
+
+                <p>📱 WhatsApp: +91 8873770139</p>
+
+                <p>📍 Muzaffarpur Saraiya Bihar, India</p>
+
+                <div class="social-icons">
+
+                    <a href="https://www.instagram.com/sunnykr1807/?hl=en">📷 Instagram</a><br>
+
+                    <a href="#">▶ YouTube</a><br>
+
+                    <a href="#">💻 GitHub</a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="text-center">
+            © 2026 TypingMasterPro | Developed By Sunny Kumar Chaudhary ❤️
+        </div>
+
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
